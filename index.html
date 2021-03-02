@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	 <meta charset="utf-8">
+	 <title>Oscar Booking</title>
+</head>
+
+<style>
+
+.mybutton {
+	background-color: rgb(28, 146, 146);
+	color: white;
+	border-radius: 5px;
+}
+
+.mystrong{
+	font-weight: bold;
+}
+
+.myitalic{
+	font-style: italic;
+}
+
+div {
+  background-color: rgb(248,248,248, 0.5);
+}
+
+label{
+	display:block;
+	width:150px;
+	float:left;
+}
+
+@media screen and (max-width: 400px){
+body {
+	font-family: "Times";
+	font-size: 1.5em;
+	width: 100vw ;
+	height: 100vh;
+	background-color: rgba(248, 248, 248) ;
+}
+
+main {
+	box-sizing: border-box;
+	display: grid;
+	width: 90vw ;
+	height: 90vh;
+	background-color: rgba(248, 248, 248) ;
+	margin-right:auto;
+	margin-left: auto;
+	grid-template-rows: minmax(143px,auto) auto  minmax(111px,auto) auto minmax(168px,auto) auto  auto auto;
+}
+#item1 {
+	grid-row: 1 ;
+	background-image: url(./asset/logoCliniqueOscar.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+#item2a {
+	grid-row: 2 ;
+	background-color: rgb(28, 146, 146);
+	font: white;
+	text-align: center;
+}
+#item2b {
+	grid-row: 3 ;
+	background-image: url(./asset/sante.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+#item2c {
+	grid-row: 4 ;
+	background-color: rgb(28, 146, 146);
+	font: white;
+	text-align: center;
+}
+#item3 {
+	grid-row: 5;
+	background-image:  url(./asset/osteoRDV400x120.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 100%;
+	text-align: center;
+	color : rgb(28, 146, 146) ;
+}
+#item4 {
+	grid-row: 6;
+}
+#item5a {
+	grid-row: 7 ;
+	background-color: rgba(51, 57, 71) ;
+	font: #FFFFFF;
+}
+#item5b {
+	grid-row: 8 ;
+	background-color: rgba(51, 57, 71) ;
+	font: #FFFFFF;
+}
+}
+
+@media screen and (min-width:800px){
+
+body {
+	font-family: "Times";
+	font-size: 1.5em;
+	width: 100vw ;
+	height: 100vh;
+	background-color: rgba(248, 248, 248) ;
+}
+
+main {
+	box-sizing: border-box;
+	margin-right:auto;
+	margin-left: auto;
+	display: grid;
+	width: 90vw ;
+	height: 90vh;
+	grid-template-columns: 50vw 50vw;
+	grid-template-rows: auto minmax(111px,auto) auto minmax(168px,auto) auto auto;
+}
+
+#item1 {
+	grid-column : 1/2;
+	grid-row: 1/4 ;
+	background-image: url(./asset/logoCliniqueOscar.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+#item2a {
+	grid-column : 2;
+	grid-row: 1 ;
+	background-color: rgb(28, 146, 146);
+	font: white;
+	text-align: center;
+}
+#item2b {
+	grid-column : 2;
+	grid-row: 2 ;
+	background-image: url(./asset/sante.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+#item2c {
+	grid-column : 2;
+	grid-row: 3 ;
+	background-color: rgb(28, 146, 146);
+	font: white;
+	text-align: center;
+}
+#item3 {
+	grid-column : 1/3;
+	grid-row: 4;
+	background-image:  url(./asset/osteoRDV800x168.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 100%;
+	text-align: center;
+	color : rgb(28, 146, 146) ;
+}
+#item4 {
+	grid-column : 1/3;
+	grid-row: 5 ;
+}
+#item5a {
+	grid-column : 1/2;
+	grid-row: 6 ;
+	background-color: rgba(51, 57, 71) ;
+}
+#item5b {
+	grid-column : 2/3;
+	grid-row: 6 ;
+	background-color: rgba(51, 57, 71) ;
+}
+}
+
+
+</style>
+
+
+<body>
+	<main >
+	<header id="item1">
+	</header>
+	<aside id="item2a">
+		<span style="color:white">CERTIFICATION</span><br />
+	</aside>
+	<aside id="item2b" >
+	</aside>
+	<aside id="item2c">
+		<span style="color:white" >PRENEZ RENDEZ-VOUS</span>
+	</aside>
+	<aside id="item3">
+		<div >
+		 Réservez une consultation ostéopathique
+	  </div>
+	</aside>
+  <article id="item4" >
+		<br />
+		Chaque consultation dure environ 45 minutes <br />
+		<ul>
+			<li>15&euro; pour les enfants, les étudiants et les tarifs réduits</li>
+			<li>20&euro; pour le tarif adulte</li>
+			<li>60&euro; pour les 6 séances</li>
+		</ul>
+		<br />
+		En clinique les soins sont dispensés par nos étudiants encadrés <br />
+		par des <span class="mystrong"> enseignants ostéopathes professionnels.</span> <br />
+		<br />
+		Merci de renseigner les champs ci-dessous.
+		<br />
+		<br />
+		<form method='post' action="sendData.php" name="myform" onsubmit="return checkMyDate(this)">
+	    <section name="mysection">
+	      <label for="myname"> Nom </label><input type="text" size="20" maxlength="20" id="myname" name="myname" placeholder="Doe" required><br />
+	      <label for="myfirstname"> Prénom </label><input type="text" size="20" maxlength="20" id="myfirstname" name="myfirstname" placeholder="John" required><br />
+				<label for="myphone"> Téléphone </label><input type="text" size="20" maxlength="20" id="myphone" name="myphone" placeholder="0600000000" required><br />
+			  <label for="mymail"> Courriel </label><input type="email" size="20" maxlength="100" id="myemail" name="myemail" placeholder="John@Doe.com" required><br />
+	    	<label for="mydate"> Date RDV </label><input type="date" id="mydate" name="mydate" required/><br />
+				<label for="myhour">Heure RDV </label><input type="time" id="myhour" name="myhour" min="09:00" max="17:00" step="3600" required /><br />
+				<p id="valid"></p>
+			<br />
+			<label for="mytarif"> Tarif: </label>
+      <select name="mytarif[]" id="mytarif" >
+        <option value=""> --Choix-- </option>
+        <option value="reduit">Enfants, Etudiants et tarifs réduits</option>
+        <option value="adulte">Adulte</option>
+        <option value="sixseances">6 Séances </option>
+      </select>
+			<br />
+	    </section>
+			<br />
+			 <input type="checkbox"  id="myradio" name="myradio"   value=1/><span class="myitalic"> J'autorise la Clinique Oscar à utiliser mes coordonnées <br />
+			  uniquement pour me contacter et gérer mon rendez-vous.</span>
+				<br />
+			<button class="mybutton" type="submit"   >Prendre RDV</button>
+  	</form>
+		<br />
+	</article>
+	<footer id="item5a">
+		<img src="./asset/logoEcoleOscar.jpg" alt="Oscar logo">
+	</footer>
+	<footer id="item5b">
+		<br />
+		<span style="color:white">
+			ECOLE OSCAR
+			<br />
+			Campus Privé d'Alsace<br />
+			24a Rue des Magasins - 67000 Strasbourg<br/>
+		</span>
+		<address>
+			<a  href="tel:0033388231414" style="color:white">Tel:+33 (0)3 88 23 14 14</a> -
+  		<a  href="mailto:info@ecoleoscar.com" style="color:white" >info@ecoleoscar.com</a><br>
+		</address>
+	</footer>
+</main>
+<script type="text/javascript">
+	function checkMyDate(form){
+		var x = document.getElementById('mydate').value;
+		var isWeekend = new Date(x);
+		var today = Date.now();
+		var date = new Date(today);
+		var xdate = new Date(x);
+
+		if (xdate < date){
+			document.getElementById("valid").innerHTML = "<span style='color:red'>Vous avez choisi une consultation dans le passé</span>";
+			return false ;
+		} else if (isWeekend.getDay() == 6 || isWeekend.getDay() == 0) {
+			document.getElementById("valid").innerHTML = "<span style='color:red'>Le cabinet est fermé le Weekend</span>";
+			return false;
+		} else {
+			document.getElementById("valid").innerHTML = "<span style='color:blue'>Votre demande a été prise en compte</span>";
+			return true;
+			}
+	}
+</script>
+</body>
+
+</html>
